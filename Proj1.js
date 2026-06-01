@@ -7,7 +7,14 @@ choices.forEach(function(choice){
         Loop(event);
 })});
 
-
+function visible(){
+    document.getElementById("paper").style.visibility = "visible";
+    document.getElementById("paper1").style.visibility = "visible";
+    document.getElementById("rock").style.visibility = "visible";
+    document.getElementById("rock1").style.visibility = "visible";
+    document.getElementById("scissor").style.visibility = "visible";
+    document.getElementById("scissor1").style.visibility = "visible";
+}
 function Loop(){
     let choice1;
     let currentChoice = event.target.id;
@@ -62,5 +69,10 @@ function Loop(){
     let Win = document.getElementById("won").textContent = `Won:${won}`;
     let Loss = document.getElementById("lost").textContent = `Lost:${lost}`;
 
-    setTimeout(function() { Loop(event); }, 1000);
+    let retry = document.getElementById("retry");
+    retry.onclick = function(){   
+        setTimeout(visible, 10); 
+        setTimeout(function() { Loop(event); }, 1000);
+    }
+    setTimeout(visible, 3000);
 }
