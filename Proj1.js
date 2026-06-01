@@ -74,5 +74,4 @@ function Loop(){
         setTimeout(visible, 10); 
         setTimeout(function() { Loop(event); }, 1000);
     }
-    setTimeout(visible, 3000);
 }
